@@ -1,0 +1,106 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
+
+
+h1 {
+    font-family: "Creepster", cursive;
+    color: #ff6600;
+    text-shadow: 0 0 10px #ff3300, 0 0 20px #800080;
+    letter-spacing: 2px;
+    font-size: 7rem;
+    font-weight: 700;
+}
+
+
+
+
+body {
+ 
+    background: linear-gradient(to bottom, #0e0b16 0%, #3a0007 50%, #1a0003 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+
+
+.todo-container {
+    background-color: rgba(20, 20, 25, 0.085);
+    border: 2px solid#ff5e00;
+    border-radius: 12px;
+    max-width: 450px;
+    margin: 20px auto;
+    padding: 25px;
+    box-shadow: 0 0 20px rgba(255, 94, 0, 0.3);
+    text-align: center;
+}
+/* Color and pointer for the li list */
+li {
+    font-family: "Creepster", cursive;
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+
+.completed {
+    text-decoration: line-through;
+    color:rgb(252, 117, 54)
+}
+
+
+.trashcan {
+    font-size: 1.5rem;
+    color: rgba(235, 64, 11, 0.973)
+}
+ /* no line-through over trash can */
+.completed .trashcan {
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+.trashcan:hover {
+    cursor: pointer;
+}
+
+
+input[type="text"] {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ff5e00;
+    background-color: #1a1a2e;
+    color: #ffffff;
+    outline: none;
+}
+
+
+button {
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: none;
+    background-color: #ff5e00;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: poinert;
+    transition: background 0.2s;
+
+
+}
+
+
+button:hover {
+    background-color: £e05200;
+}
+.bottom-image {
+    width: 70%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255, 94, 0, 0.6);
+}
