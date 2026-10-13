@@ -44,7 +44,11 @@ infoText.innerText = "";
 if(text.length === 0){
 
 
-   infoText.innerText = "Please enter a task to add";
+   infoText.innerText = "DON'T YOU DARE";
+   infoText.classList.add("shake");
+   setTimeout (() => {
+    infoText.classList.remove("shake")
+   }, 4000);
    return;
 }
 
@@ -99,7 +103,7 @@ function(){
 );
 // create a trashcan to the list
 const trash = document.createElement("span");
-trash.innerHTML = "&#x1F5D1";
+trash.innerHTML = '🪦';
 trash.classList.add("trashcan");
 todoItem.appendChild(trash);
 
@@ -107,22 +111,50 @@ todoItem.appendChild(trash);
 trash.addEventListener(
     "click",
     function(){
-        if (todoObject.completed) {   //If todo was done when deleted, change completed
+        const sound = new Audio('ghost.mp3');
+        sound.play();
+
+        todoItem.classList.add("fade-out");
+
+        setTimeout(function() {
+            if (todoObject.completed) {   //If todo was done when deleted, change completed
             completedCount--;
             countTodos.innerText = `${completedCount} completed`;
-        }
+            }
        
         todoItem.remove();
+  
 // find the index of the todo item to remove from the array
     const index = todoArray.findIndex(item => item.id === todoObject.id);
         if (index !== -1) {
             todoArray.splice(index, 1); }
             console.log(todoArray);
-   
- });
-
-
-
-
+        }, 1500);
+    });
 input.value = "";
 }
+
+function spawnBat() {
+  
+    const bat = document.createElement("span");
+    bat.className = "bat";
+    bat.innerText = "🦇"; 
+
+    const randomTop = Math.random() * 70 + 10;
+    bat.style.top = randomTop + "vh";
+
+    const randomDuration = Math.random() * 4 + 4;
+    bat.style.animation = `flyAcross ${randomDuration}s linear`;
+
+    document.body.appendChild(bat);
+
+    setTimeout(() => {
+       
+        bat.style.opacity = '0';
+        setTimeout(() => {
+            bat.remove();
+        }, 500);
+    }, randomDuration * 1000); 
+}
+
+setInterval(spawnBat, 12000);
